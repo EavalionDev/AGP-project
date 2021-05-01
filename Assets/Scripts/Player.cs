@@ -138,13 +138,12 @@ public class Player : MonoBehaviour
                 else
                 {
                     //After the trail has been adjusted copy the used segments and add them to the polygon tester list to use as it's vertice points
-                    //meshGenerator.GetComponent<PolygonTester>().usedTrailSegments.Add(cols);
-                    //meshGenerator.GetComponent<PolygonTester>().UpdateVerticesList();
-                    adjustTrail = false;
-                    //break;
+                    meshGenerator.GetComponent<PolygonTester>().usedTrailSegments.Add(cols);
                 }
-                
             }
+
+            meshGenerator.GetComponent<PolygonTester>().UpdateVerticesList();
+            adjustTrail = false;
 
             //Do the same as above to the locked in trail visuals
             foreach (GameObject trailLockIn in usedLockInParticles.ToArray())
